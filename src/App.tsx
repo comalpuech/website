@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Brain, Code, Database, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
 // AJOUT DE L'IMPORT ICI
