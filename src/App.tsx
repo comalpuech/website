@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Brain, Code, Database, Github, Linkedin, Mail, Menu, X } from 'lucide-react';
 
+// AJOUT DE L'IMPORT ICI
+// Assurez-vous que le chemin est correct par rapport à ce fichier (App.js)
+import profilePhoto from './assets/photo.png'; 
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -11,7 +15,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="text-lg font-bold text-slate-900">
-              Côme-Alexis Puech
+              C.A. Puech
             </div>
             
             {/* Desktop Navigation */}
@@ -47,42 +51,56 @@ function App() {
         {/* Hero Section */}
         <section className="min-h-screen flex items-center px-6 lg:px-8 py-20">
           <div className="max-w-7xl mx-auto w-full">
-            <div className="max-w-3xl">
-              <p className="text-blue-600 font-medium mb-4 text-sm uppercase tracking-wide">
-                Étudiant · IA & Data · 2ᵉ année cycle ingénieur
-              </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">
-                Bonjour, moi c'est{" "}
-                <span className="text-blue-600">Côme-Alexis</span>
-              </h1>
-              <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
-                Étudiant en 2ᵉ année de cycle ingénieur à l'ESIEA, majeure IA-Data. 
-                Passionné par l'intelligence artificielle appliquée et le développement d'outils concrets.
-              </p>
-              <div className="flex flex-wrap gap-4 mb-12">
-                <a 
-                  href="#projects" 
-                  className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
-                >
-                  Voir mes projets
-                </a>
-                <a 
-                  href="#contact" 
-                  className="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-lg hover:bg-slate-900 hover:text-white transition-colors font-medium"
-                >
-                  Me contacter
-                </a>
+            <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+              
+              {/* Colonne Texte (Gauche) */}
+              <div className="flex-1 max-w-3xl">
+                <p className="text-blue-600 font-medium mb-4 text-sm uppercase tracking-wide">
+                  Portfolio · Élève Ingénieur
+                </p>
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-6 leading-tight">
+                  Côme-Alexis <span className="text-blue-600">Puech</span>
+                </h1>
+                <p className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl">
+                  Étudiant en 2ᵉ année de cycle ingénieur à l'ESIEA, majeure IA-Data. 
+                  Je conçois des solutions mêlant intelligence artificielle et développement logiciel pour résoudre des problèmes concrets.
+                </p>
+                <div className="flex flex-wrap gap-4 mb-12">
+                  <a 
+                    href="#projects" 
+                    className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
+                  >
+                    Voir mes projets
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="px-8 py-4 border-2 border-slate-900 text-slate-900 rounded-lg hover:bg-slate-900 hover:text-white transition-colors font-medium"
+                  >
+                    Me contacter
+                  </a>
+                </div>
+
+                <div className="inline-block bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+                  <p className="font-semibold text-slate-900 mb-3">En ce moment</p>
+                  <ul className="space-y-2 text-slate-600">
+                    <li>🎓 2ᵉ année cycle ingénieur – ESIEA</li>
+                    <li>🧠 Majeure : IA-Data</li>
+                    <li>🛠️ Projet : AI-powered Study Planner</li>
+                    <li>🔍 À la recherche d'un stage en IA / Data / Dev</li>
+                  </ul>
+                </div>
               </div>
 
-              <div className="inline-block bg-white rounded-xl p-6 shadow-sm border border-slate-200">
-                <p className="font-semibold text-slate-900 mb-3">En ce moment</p>
-                <ul className="space-y-2 text-slate-600">
-                  <li>🎓 2ᵉ année cycle ingénieur – ESIEA</li>
-                  <li>🧠 Majeure : IA-Data</li>
-                  <li>🛠️ Projet : AI-powered Study Planner</li>
-                  <li>🔍 À la recherche d'un stage en IA / Data / Dev</li>
-                </ul>
+              {/* Colonne Image (Droite) */}
+              <div className="flex-1 max-w-sm lg:max-w-md w-full">
+                <img 
+                  // UTILISATION DE LA VARIABLE IMPORTÉE ICI
+                  src={profilePhoto} 
+                  alt="Portrait de Côme-Alexis Puech" 
+                  className="w-full h-auto rounded-2xl shadow-xl ring-1 ring-slate-900/10 object-cover rotate-2 hover:rotate-0 transition-transform duration-300"
+                />
               </div>
+
             </div>
           </div>
         </section>
@@ -128,40 +146,18 @@ function App() {
                   </a>
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">AI-powered Study Planner</h3>
-                <p className="text-sm text-slate-500 mb-4">Java • JavaFX • IA locale</p>
+                <p className="text-sm text-slate-500 mb-4">Java • JavaFX • Ollama • SQLite</p>
                 <p className="text-slate-600 leading-relaxed mb-6">
-                  Application de planification d'études combinant un Pomodoro timer, la gestion de tâches et un 
-                  module d'IA locale pour proposer des plans de travail et des messages de motivation.
+                  Calendrier intelligent intégrant la méthode Pomodoro et un LLM local. 
+                  L'IA analyse l'urgence et la difficulté des tâches pour les placer 
+                  automatiquement dans l'emploi du temps de manière optimale.
                 </p>
+                
                 <div className="flex flex-wrap gap-2">
                   <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Java</span>
-                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">JavaFX</span>
-                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">IA</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">Ollama (IA)</span>
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">CalendarFX</span>
                 </div>
-              </div>
-
-              {/* Projet IA/Data à venir */}
-              <div className="bg-slate-50 rounded-2xl p-8 border-2 border-dashed border-slate-300">
-                <div className="p-3 bg-white rounded-lg inline-block mb-6">
-                  <Database className="text-slate-400" size={28} />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Projet IA / Data</h3>
-                <p className="text-sm text-slate-500 mb-4">Python • ML • Analyse</p>
-                <p className="text-slate-600 leading-relaxed">
-                  Projet de classification, clustering ou analyse de données en cours de développement.
-                </p>
-              </div>
-
-              {/* Projet Web/React à venir */}
-              <div className="bg-slate-50 rounded-2xl p-8 border-2 border-dashed border-slate-300">
-                <div className="p-3 bg-white rounded-lg inline-block mb-6">
-                  <Code className="text-slate-400" size={28} />
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Projet Web / React</h3>
-                <p className="text-sm text-slate-500 mb-4">React • Vite • TypeScript</p>
-                <p className="text-slate-600 leading-relaxed">
-                  Application web moderne en cours de développement (dashboard, outil interne, etc.).
-                </p>
               </div>
 
             </div>
